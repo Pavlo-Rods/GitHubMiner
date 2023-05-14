@@ -1,13 +1,15 @@
 
-package Miner.GitHub.model.issue;
+package Miner.GitHub.model.comment;
 
-import Miner.GitHub.model.comment.CommentSearch;
+import javax.annotation.Generated;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class User {
 
     @JsonProperty("login")
@@ -46,64 +48,6 @@ public class User {
     private String type;
     @JsonProperty("site_admin")
     private Boolean siteAdmin;
-    @JsonProperty("name")
-    private Object name;
-    @JsonProperty("company")
-    private Object company;
-    @JsonProperty("blog")
-    private String blog;
-    @JsonProperty("location")
-    private Object location;
-    @JsonProperty("email")
-    private Object email;
-    @JsonProperty("hireable")
-    private Object hireable;
-    @JsonProperty("bio")
-    private Object bio;
-    @JsonProperty("twitter_username")
-    private Object twitterUsername;
-    @JsonProperty("public_repos")
-    private Integer publicRepos;
-    @JsonProperty("public_gists")
-    private Integer publicGists;
-    @JsonProperty("followers")
-    private Integer followers;
-    @JsonProperty("following")
-    private Integer following;
-    @JsonProperty("created_at")
-    private String createdAt;
-    @JsonProperty("updated_at")
-    private String updatedAt;
-
-
-    private List<CommentSearch> authoredComments;
-    private List<Issue> assignedIssues;
-    private List<Issue> authoredIssues;
-
-
-    public List<CommentSearch> getAuthoredComments() {
-        return authoredComments;
-    }
-
-    public void setAuthoredComments(List<CommentSearch> authoredComments) {
-        this.authoredComments = authoredComments;
-    }
-
-    public List<Issue> getAssignedIssues() {
-        return assignedIssues;
-    }
-
-    public void setAssignedIssues(List<Issue> assignedIssues) {
-        this.assignedIssues = assignedIssues;
-    }
-
-    public List<Issue> getAuthoredIssues() {
-        return authoredIssues;
-    }
-
-    public void setAuthoredIssues(List<Issue> authoredIssues) {
-        this.authoredIssues = authoredIssues;
-    }
 
     public User(String login, Integer id, String nodeId, String avatarUrl, String gravatarId, String url, String htmlUrl, String followersUrl, String followingUrl, String gistsUrl, String starredUrl, String subscriptionsUrl, String organizationsUrl, String reposUrl, String eventsUrl, String receivedEventsUrl, String type, Boolean siteAdmin) {
         this.login = login;
@@ -129,6 +73,7 @@ public class User {
     public static User ofFormat(User u) {
         return new User(u.getLogin(), u.getId(), u.getNodeId(), u.getAvatarUrl(), u.getGravatarId(), u.getUrl(), u.getHtmlUrl(), u.getFollowersUrl(), u.getFollowingUrl(), u.getGistsUrl(), u.getStarredUrl(), u.getSubscriptionsUrl(), u.getOrganizationsUrl(), u.getReposUrl(), u.getEventsUrl(), u.getReceivedEventsUrl(), u.getType(), u.getSiteAdmin());
     }
+
     @JsonProperty("login")
     public String getLogin() {
         return login;
@@ -309,146 +254,6 @@ public class User {
         this.siteAdmin = siteAdmin;
     }
 
-    @JsonProperty("name")
-    public Object getName() {
-        return name;
-    }
-
-    @JsonProperty("name")
-    public void setName(Object name) {
-        this.name = name;
-    }
-
-    @JsonProperty("company")
-    public Object getCompany() {
-        return company;
-    }
-
-    @JsonProperty("company")
-    public void setCompany(Object company) {
-        this.company = company;
-    }
-
-    @JsonProperty("blog")
-    public String getBlog() {
-        return blog;
-    }
-
-    @JsonProperty("blog")
-    public void setBlog(String blog) {
-        this.blog = blog;
-    }
-
-    @JsonProperty("location")
-    public Object getLocation() {
-        return location;
-    }
-
-    @JsonProperty("location")
-    public void setLocation(Object location) {
-        this.location = location;
-    }
-
-    @JsonProperty("email")
-    public Object getEmail() {
-        return email;
-    }
-
-    @JsonProperty("email")
-    public void setEmail(Object email) {
-        this.email = email;
-    }
-
-    @JsonProperty("hireable")
-    public Object getHireable() {
-        return hireable;
-    }
-
-    @JsonProperty("hireable")
-    public void setHireable(Object hireable) {
-        this.hireable = hireable;
-    }
-
-    @JsonProperty("bio")
-    public Object getBio() {
-        return bio;
-    }
-
-    @JsonProperty("bio")
-    public void setBio(Object bio) {
-        this.bio = bio;
-    }
-
-    @JsonProperty("twitter_username")
-    public Object getTwitterUsername() {
-        return twitterUsername;
-    }
-
-    @JsonProperty("twitter_username")
-    public void setTwitterUsername(Object twitterUsername) {
-        this.twitterUsername = twitterUsername;
-    }
-
-    @JsonProperty("public_repos")
-    public Integer getPublicRepos() {
-        return publicRepos;
-    }
-
-    @JsonProperty("public_repos")
-    public void setPublicRepos(Integer publicRepos) {
-        this.publicRepos = publicRepos;
-    }
-
-    @JsonProperty("public_gists")
-    public Integer getPublicGists() {
-        return publicGists;
-    }
-
-    @JsonProperty("public_gists")
-    public void setPublicGists(Integer publicGists) {
-        this.publicGists = publicGists;
-    }
-
-    @JsonProperty("followers")
-    public Integer getFollowers() {
-        return followers;
-    }
-
-    @JsonProperty("followers")
-    public void setFollowers(Integer followers) {
-        this.followers = followers;
-    }
-
-    @JsonProperty("following")
-    public Integer getFollowing() {
-        return following;
-    }
-
-    @JsonProperty("following")
-    public void setFollowing(Integer following) {
-        this.following = following;
-    }
-
-    @JsonProperty("created_at")
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    @JsonProperty("created_at")
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    @JsonProperty("updated_at")
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    @JsonProperty("updated_at")
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -524,62 +329,6 @@ public class User {
         sb.append("siteAdmin");
         sb.append('=');
         sb.append(((this.siteAdmin == null)?"<null>":this.siteAdmin));
-        sb.append(',');
-        sb.append("name");
-        sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
-        sb.append(',');
-        sb.append("company");
-        sb.append('=');
-        sb.append(((this.company == null)?"<null>":this.company));
-        sb.append(',');
-        sb.append("blog");
-        sb.append('=');
-        sb.append(((this.blog == null)?"<null>":this.blog));
-        sb.append(',');
-        sb.append("location");
-        sb.append('=');
-        sb.append(((this.location == null)?"<null>":this.location));
-        sb.append(',');
-        sb.append("email");
-        sb.append('=');
-        sb.append(((this.email == null)?"<null>":this.email));
-        sb.append(',');
-        sb.append("hireable");
-        sb.append('=');
-        sb.append(((this.hireable == null)?"<null>":this.hireable));
-        sb.append(',');
-        sb.append("bio");
-        sb.append('=');
-        sb.append(((this.bio == null)?"<null>":this.bio));
-        sb.append(',');
-        sb.append("twitterUsername");
-        sb.append('=');
-        sb.append(((this.twitterUsername == null)?"<null>":this.twitterUsername));
-        sb.append(',');
-        sb.append("publicRepos");
-        sb.append('=');
-        sb.append(((this.publicRepos == null)?"<null>":this.publicRepos));
-        sb.append(',');
-        sb.append("publicGists");
-        sb.append('=');
-        sb.append(((this.publicGists == null)?"<null>":this.publicGists));
-        sb.append(',');
-        sb.append("followers");
-        sb.append('=');
-        sb.append(((this.followers == null)?"<null>":this.followers));
-        sb.append(',');
-        sb.append("following");
-        sb.append('=');
-        sb.append(((this.following == null)?"<null>":this.following));
-        sb.append(',');
-        sb.append("createdAt");
-        sb.append('=');
-        sb.append(((this.createdAt == null)?"<null>":this.createdAt));
-        sb.append(',');
-        sb.append("updatedAt");
-        sb.append('=');
-        sb.append(((this.updatedAt == null)?"<null>":this.updatedAt));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');

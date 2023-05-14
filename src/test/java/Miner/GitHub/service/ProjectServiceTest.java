@@ -15,17 +15,21 @@ public class ProjectServiceTest {
     private static final String name = "spring-framework";
     @Test
     void findOne(){
-        System.out.println(service.findOne(owner, name));
+        System.out.println(service.findOne(owner, name, 2, 20, 2));
     }
 
     @Test
     void findAllCommits(){
-        System.out.println(service.findAllCommits(owner, name));
+        System.out.println(service.findAllCommits(owner, name, 2, 2));
     }
 
     @Test
     void findAllIssues(){
-        System.out.println(service.findAllIssues(owner, name));
+        System.out.println(service.findAllIssues(owner, name, 20, 2));
     }
 
+    @Test
+    void findAllComments(){
+        System.out.println(service.findAllComments(owner, name, 30482, 2));
+    }
 }

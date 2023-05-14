@@ -1,5 +1,8 @@
 package Miner.GitHub.model.issue;
 
+import Miner.GitHub.model.Usuario;
+import Miner.GitHub.model.comment.Comment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +18,8 @@ public class Issue {
     private String updated_at;
     private String closed_at;
     private List<String> labels;
-    private User author;
-    private User asignee;
+    private Usuario author;
+    private Usuario asignee;
     private Integer upvotes;
     private Integer downvotes;
     private String web_url;
@@ -117,19 +120,19 @@ public class Issue {
         this.labels = labels;
     }
 
-    public User getAuthor() {
+    public Usuario getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(Usuario author) {
         this.author = author;
     }
 
-    public User getAsignee() {
+    public Usuario getAsignee() {
         return asignee;
     }
 
-    public void setAsignee(User asignee) {
+    public void setAsignee(Usuario asignee) {
         this.asignee = asignee;
     }
 
